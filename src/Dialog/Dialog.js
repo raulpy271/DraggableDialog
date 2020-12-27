@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dialog.css'
+import {calculatesTheValueOfAdimensionToCenterElement} from '../utils.js'
 
 
 const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
@@ -21,9 +22,9 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
     componentDidMount = () => {
       let heightOfScreen = window.innerHeight
       let widthOfScreen = window.innerWidth
-      let top = this.calculatesTheValueOfAdimensionToCenterElement(
+      let top = calculatesTheValueOfAdimensionToCenterElement(
         heightOfScreen, this.defaultSizeInPercentage)
-      let left = this.calculatesTheValueOfAdimensionToCenterElement(
+      let left = calculatesTheValueOfAdimensionToCenterElement(
         widthOfScreen, this.defaultSizeInPercentage)
 
 
@@ -36,11 +37,22 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
     }
 
 
-    updatePositionWhenHoldClick = clickEvent => {
+    updatePosition = (movementX, movementY) => 
       this.setState({
-        top  : this.state.top  + clickEvent.movementY,
-        left : this.state.left + clickEvent.movementX
+        top  : this.state.top  + movementY,
+        left : this.state.left + movementX
       }) 
+
+
+    updateLastTouch = touch =>
+      this.setState({
+        lastTouchX : touch.clientX,
+        lastTouchY : touch.clientY
+      })
+
+
+    updatePositionWhenHoldClick = clickEvent => {
+      this.updatePosition(clickEvent.movementX, clickEvent.movementY)
     }
 
 
@@ -49,12 +61,8 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
         let touch = touchEvent.touches[0]
         let movementX = touch.clientX - this.state.lastTouchX
         let movementY = touch.clientY - this.state.lastTouchY
-        this.setState({
-          top  : this.state.top  + movementY,
-          left : this.state.left + movementX,
-          lastTouchX : touch.clientX,
-          lastTouchY : touch.clientY
-        })
+        this.updatePosition(movementX, movementY)
+        this.updateLastTouch(touch)
       }
     }
 
@@ -75,10 +83,7 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
       let touch = touchEvent.touches[0]
       window.ontouchmove = this.updatePositionWhenHoldTouch
       window.ontouchend  = this.endTouch
-      this.setState({
-        lastTouchX : touch.clientX,
-        lastTouchY : touch.clientY
-      })
+      this.updateLastTouch(touch)
     }
 
 
@@ -86,14 +91,6 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
       window.ontouchmove = null
       window.ontouchend  = null
     }
-
-
-    calculatesTheValueOfAdimensionToCenterElement = 
-      (dimensionOfSreen, lengthOfElementInPercentage) => {
-      let lengthOfElement = 
-          (lengthOfElementInPercentage / 100 ) * dimensionOfSreen
-      return (dimensionOfSreen - lengthOfElement) / 2 
-    } 
 
 
     render() {
@@ -121,4 +118,4 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
 }
 
 
-export default CreateDialog;
+export default CreateDialog

@@ -3,7 +3,14 @@ import './Dialog.css'
 import {calculatesTheValueOfAdimensionToCenterElement} from '../utils.js'
 
 
-const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
+const CreateDialog = ({
+  TopBar,
+  DialogBody,
+  defaultSizeInPercentage = 50,
+  dialogStyle = {},
+  topBarContainerStyle = {},
+  bodyContainerStyle = {}
+  }) => {
   return class extends React.Component {
     constructor(props) {
       super(props)
@@ -101,14 +108,19 @@ const CreateDialog = (TopBar, DialogBody, defaultSizeInPercentage) => {
             "top"    : String(this.state.top)  + "px",
             "left"   : String(this.state.left) + "px",
             "width"  : String(this.state.width)  + "%",
-            "height" : String(this.state.height)  + "%"
+            "height" : String(this.state.height)  + "%",
+            ...dialogStyle
           }}
         >
-          <div className="dialogTopBar"
-            onMouseDown={this.click} onTouchStart={this.touch}>
+          <div 
+            className="dialogTopBar"
+            onMouseDown={this.click} 
+            onTouchStart={this.touch}
+            style = {topBarContainerStyle}
+          >
             <TopBar/>
           </div>
-          <div className="dialogContent">
+          <div className="dialogContent" style={bodyContainerStyle}>
             <DialogBody/>
           </div>
         </div>

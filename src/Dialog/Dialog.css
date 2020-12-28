@@ -2,6 +2,12 @@
   position : fixed;
   resize: both;
   overflow: hidden;
+  background-color : white;
+}
+
+
+.dialogTopBar {
+  background-color : cyan;
 }
 
 

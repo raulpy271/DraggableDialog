@@ -1,14 +1,7 @@
 .dialog {
-  background-color : white;
   position : fixed;
   resize: both;
   overflow: hidden;
-}
-
-
-.dialogTopBar {
-  background-color : grey;
-  border : 0px 0px 1px 1px black;
 }
 
 

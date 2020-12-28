@@ -24,7 +24,12 @@ Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum 
 }
 
 
-const SampleExample = CreateDialog(Top, Content, 50)
+const SampleExample = CreateDialog({
+  TopBar : Top,
+  DialogBody : Content,
+  defaultSizeInPercentage : 30,
+  dialogStyle : {"color" : "cyan"}
+})
 
 
 export default SampleExample

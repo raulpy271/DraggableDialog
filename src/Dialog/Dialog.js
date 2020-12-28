@@ -9,7 +9,9 @@ const CreateDialog = ({
   defaultSizeInPercentage = 50,
   dialogStyle = {},
   topBarContainerStyle = {},
-  bodyContainerStyle = {}
+  topBarContainerProps = {},
+  bodyContainerStyle = {},
+  bodyContainerProps = {}
   }) => {
   return class extends React.Component {
     constructor(props) {
@@ -118,10 +120,10 @@ const CreateDialog = ({
             onTouchStart={this.touch}
             style = {topBarContainerStyle}
           >
-            <TopBar/>
+            <TopBar {...topBarContainerProps}/>
           </div>
           <div className="dialogContent" style={bodyContainerStyle}>
-            <DialogBody/>
+            <DialogBody {...bodyContainerProps}/>
           </div>
         </div>
       )

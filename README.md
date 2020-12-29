@@ -1,6 +1,11 @@
+
 # Create A Draggable, Resizable, and Custom Dialog
 
 ![Terminal in browser](/public/socialImage.png)
+
+This a ReactJS Component that helps to create draggable dialogs that are responsive and work on phones too. He automates the process of create events that lister to the user drags the dialog. 
+
+So, you don't need to worry about creating this event to handle clicks and touch's, you will only create the styles. 
 
 ## Why?
 

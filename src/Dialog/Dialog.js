@@ -1,18 +1,24 @@
 import React from 'react';
 import './Dialog.css'
-import {calculatesTheValueOfAdimensionToCenterElement} from '../utils.js'
+import {
+  calculatesTheValueOfAdimensionToCenterElement,
+  addEventToHideAndShowDialog
+  } from '../utils.js'
 
 
 const CreateDialog = ({
   TopBar,
   DialogBody,
   defaultSizeInPercentage = 50,
+  showButtonId,
+  hideButtonId,
   dialogStyle = {},
   topBarContainerStyle = {},
   topBarContainerProps = {},
   bodyContainerStyle = {},
   bodyContainerProps = {}
   }) => {
+  let dialogId = "dialog"
   return class extends React.Component {
     constructor(props) {
       super(props)
@@ -29,6 +35,9 @@ const CreateDialog = ({
 
 
     componentDidMount = () => {
+      addEventToHideAndShowDialog(hideButtonId, showButtonId, dialogId)
+
+
       let heightOfScreen = window.innerHeight
       let widthOfScreen = window.innerWidth
       let top = calculatesTheValueOfAdimensionToCenterElement(
@@ -105,7 +114,8 @@ const CreateDialog = ({
     render() {
       return (
         <div 
-          className="dialog"
+          className={dialogId}
+          id={dialogId}
           style = {{
             "top"    : String(this.state.top)  + "px",
             "left"   : String(this.state.left) + "px",

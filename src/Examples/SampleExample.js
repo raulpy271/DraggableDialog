@@ -25,7 +25,7 @@ function Content() {
 const SampleExample = CreateDialog({
   TopBar : Top,
   DialogBody : Content,
-  defaultSizeInPercentage : 30,
+  defaultSizeInPercentage : 30
 })
 
 

@@ -16,12 +16,12 @@ class DraggableWithoutTouchSupport {
     this.top = 0
     this.left = 0
     this.dialog = document.getElementById(dialogId)
-    let elementThatCaptureThatClick =
+    this.elementThatCaptureThatClick =
       document.getElementById(elementThatCaptureThatClickId)
 
 
     this.centerDialog()
-    elementThatCaptureThatClick.onmousedown = this.click
+    this.elementThatCaptureThatClick.onmousedown = this.click
     addEventToHideAndShowDialog(hideButtonId, showButtonId, dialogId)
   }
 

@@ -1,11 +1,28 @@
 
 
+const getPositionTocenterElement = (element, window) => {
+  let elementHeight = element.clientHeight
+  let elementWidth  = element.clientWidth
+  let heightOfScreen = window.innerHeight
+  let widthOfScreen = window.innerWidth
+  let top = calculatesTheTopValueOfAdimensionToCenterElement(
+    heightOfScreen, elementHeight)
+  let left = calculatesTheLeftValueOfAdimensionToCenterElement(
+    widthOfScreen, elementWidth)
+
+
+  return [top, left]
+}
+
+
 const calculatesTheLeftValueOfAdimensionToCenterElement =
-  (widthOfSreen, lengthOfWidth) => (widthOfSreen - lengthOfWidth) / 2
+  (widthOfSreen, lengthOfWidth) => 
+    (widthOfSreen - lengthOfWidth) / 2 
 
 
 const calculatesTheTopValueOfAdimensionToCenterElement = 
-  (heightOfSreen, lengthOfHeight) => ( heightOfSreen - lengthOfHeight) / 2
+  (heightOfSreen, lengthOfHeight) => 
+    (heightOfSreen - lengthOfHeight) / 2
 
 
 const calculatesTheValueOfAdimensionToCenterElementFromPercentage = 
@@ -59,7 +76,8 @@ export {
   hideDialog,
   showDialogWhenButtonIsActive,
   hideDialogWhenButtonIsActive,
-  addEventToHideAndShowDialog
+  addEventToHideAndShowDialog,
+  getPositionTocenterElement
 }
 
 

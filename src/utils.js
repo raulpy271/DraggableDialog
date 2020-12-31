@@ -1,6 +1,14 @@
 
 
-const calculatesTheValueOfAdimensionToCenterElement = 
+const calculatesTheLeftValueOfAdimensionToCenterElement =
+  (widthOfSreen, lengthOfWidth) => (widthOfSreen - lengthOfWidth) / 2
+
+
+const calculatesTheTopValueOfAdimensionToCenterElement = 
+  (heightOfSreen, lengthOfHeight) => ( heightOfSreen - lengthOfHeight) / 2
+
+
+const calculatesTheValueOfAdimensionToCenterElementFromPercentage = 
   (dimensionOfSreen, lengthOfElementInPercentage) => {
   let lengthOfElement = 
       (lengthOfElementInPercentage / 100 ) * dimensionOfSreen
@@ -45,7 +53,9 @@ const addEventToHideAndShowDialog = (
 
 
 export {
-  calculatesTheValueOfAdimensionToCenterElement,
+  calculatesTheLeftValueOfAdimensionToCenterElement,
+  calculatesTheTopValueOfAdimensionToCenterElement,
+  calculatesTheValueOfAdimensionToCenterElementFromPercentage,
   hideDialog,
   showDialogWhenButtonIsActive,
   hideDialogWhenButtonIsActive,

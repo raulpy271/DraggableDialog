@@ -1,38 +1,37 @@
 import {
-  calculatesTheLeftValueOfAdimensionToCenterElement,
-  calculatesTheTopValueOfAdimensionToCenterElement,
+  getPositionTocenterElement,
   addEventToHideAndShowDialog
   } from '../utils.js'
 
 
 class Draggable {
-  constructor({ dialogId,
+
+
+  constructor({ 
+    dialogId,
     elementThatCaptureThatClickId,
     showButtonId,
     hideButtonId
   }) {
-    this.dialog = document.getElementById(dialogId)
-    this.clickableElement = 
-      document.getElementById(elementThatCaptureThatClickId)
-    this.clickableElement.onmousedown = this.click
     this.top = 0
     this.left = 0
-    this.centerElement()
+    this.dialog = document.getElementById(dialogId)
+    let elementThatCaptureThatClick =
+      document.getElementById(elementThatCaptureThatClickId)
+
+
+    this.centerDialog()
+    elementThatCaptureThatClick.onmousedown = this.click
+    addEventToHideAndShowDialog(hideButtonId, showButtonId, dialogId)
   }
 
 
-  centerElement = () => {
-    let elementHeight = this.dialog.clientHeight
-    let elementWidth  = this.dialog.clientWidth
-    let heightOfScreen = window.innerHeight
-    let widthOfScreen = window.innerWidth
-    this.top = calculatesTheTopValueOfAdimensionToCenterElement(
-      heightOfScreen, elementHeight)
-    this.left = calculatesTheLeftValueOfAdimensionToCenterElement(
-      widthOfScreen, elementWidth)
+  centerDialog = () => {
+    let [top, left] = getPositionTocenterElement(this.dialog, window)
+    this.top = top
+    this.left = left
     this.updatePosition(0, 0)
   }
-
 
   updatePosition = (movementX, movementY) => {
     this.top  = this.top  + movementY
@@ -43,20 +42,17 @@ class Draggable {
 
 
   updatePositionWhenHoldClick = clickEvent => {
-    console.log(2)
     this.updatePosition(clickEvent.movementX, clickEvent.movementY)
   }
 
 
   click = mouseEvent => {
-    console.log(1)
     window.onmousemove = this.updatePositionWhenHoldClick 
     window.onmouseup = this.endClick
   }
 
 
   endClick = () => {
-    console.log(3)
     window.onmousemove = null
     window.onmouseup   = null
   }

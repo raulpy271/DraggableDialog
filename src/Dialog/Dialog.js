@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dialog.css'
 import {
-  calculatesTheValueOfAdimensionToCenterElement,
+  calculatesTheValueOfAdimensionToCenterElementFromPercentage,
   addEventToHideAndShowDialog
   } from '../utils.js'
 
@@ -40,9 +40,9 @@ const CreateDialog = ({
 
       let heightOfScreen = window.innerHeight
       let widthOfScreen = window.innerWidth
-      let top = calculatesTheValueOfAdimensionToCenterElement(
+      let top = calculatesTheValueOfAdimensionToCenterElementFromPercentage(
         heightOfScreen, this.defaultSizeInPercentage)
-      let left = calculatesTheValueOfAdimensionToCenterElement(
+      let left = calculatesTheValueOfAdimensionToCenterElementFromPercentage(
         widthOfScreen, this.defaultSizeInPercentage)
 
 

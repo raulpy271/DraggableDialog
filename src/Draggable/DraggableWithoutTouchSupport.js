@@ -4,7 +4,7 @@ import {
   } from '../utils.js'
 
 
-class Draggable {
+class DraggableWithoutTouchSupport {
 
 
   constructor({ 
@@ -59,4 +59,4 @@ class Draggable {
 }
 
 
-export default Draggable
+export default DraggableWithoutTouchSupport

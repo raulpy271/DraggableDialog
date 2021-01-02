@@ -1,27 +1,12 @@
 {
   "name": "draggable_dialog_in_react",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
-  },
+  "dependencies": {},
+  "main": "./lib/Draggable.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "node src/Draggable/Draggable.js"
   },
   "browserslist": {
     "production": [
@@ -44,5 +29,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/raulpy271/DraggableDialogInReact/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11"
   }
 }

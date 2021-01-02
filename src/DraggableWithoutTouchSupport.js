@@ -1,7 +1,7 @@
 import {
   getPositionTocenterElement,
   addEventToHideAndShowDialog
-  } from '../utils.js'
+  } from './utils.js'
 
 
 class DraggableWithoutTouchSupport {

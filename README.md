@@ -3,15 +3,15 @@
 
 ![Terminal in browser](/assets/socialImage.png)
 
-This a library that use Vanilla Javascript to create draggable dialogs that are responsive and easy to use. He automates the process of create events that listen to the user drags the dialog. He listens to touches and clicks, so the dialog will be draggable on phones too. 
+This is a library that use Vanilla Javascript to create draggable dialogs. He automates the process of create events that listen to the touches and clicks and moves. 
 
-So, you don't need to worry about creating this event to handle clicks and touches and move the dialog, you will only create the html and styles of the dialog, and the lib will turn it draggable.
+So, you don't need to worry about create javascript code, to turn draggable your elements, you will only create the html and styles of the dialog, and the lib will turn it draggable to desktop and phones users.
 
 ## Why?
 
 The dialog box in sites are very common, they have different utilities. But, I don't know something that helps developers to automate the process of creating Draggable dialogs. I only found a snippet of codes that are either poorly documented or difficult to custom, or with another mistake. 
 
-So to help me and the others, I decided to write a lib turn conteiners draggable, and can be custom, he should be easy to use and well documented.
+So to help me and the others, I decided to write a lib that turns containers draggable, she should be custom, easy to use, and well documented.
 
 ## Examples
 
@@ -24,11 +24,17 @@ new Draggable({
 })
 ```
 
-As you see, you have to pass to `Draggable` an object with the id of the element that will be draggable and the id of the element that will listen to touches and clicks to drag the dialog. Normally, this is the top bar of the dialog, but can be whathever element that you want, or can be the entire dialog, so you can drag touching in any part of the dialog.
+As you see, you have to pass to Draggable an object with the id of the element that will be draggable and the id of the element that will listen to touches and clicks to drag the dialog. Normally, this is the top bar of the dialog, but can be whatever element that you want, or can be the entire dialog, so you can drag touching in any part of the dialog.
 
-To see more paramenters that this object can have, see the documentation [section](#documentation).
+To see more methods that this object can have, see the documentation [section](#documentation).
 
-## Installation
+## Installation 
+
+The library can be used in the browser or in NodeJs environment to be used in React or other libraries.
+
+### Installation in browser
+
+### Installation in React
 
 ## documentation
 

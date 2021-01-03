@@ -15,6 +15,19 @@ So to help me and the others, I decided to write a lib turn conteiners draggable
 
 ## Examples
 
+To turn a dialog draggable, you need only type this:
+
+```js
+new Draggable({
+  "dialogId"                      : "elementId",
+  "elementThatCaptureThatClickId" : "elementId"
+})
+```
+
+As you see, you have to pass to `Draggable` an object with the id of the element that will be draggable and the id of the element that will listen to touches and clicks to drag the dialog. Normally, this is the top bar of the dialog, but can be whathever element that you want, or can be the entire dialog, so you can drag touching in any part of the dialog.
+
+To see more paramenters that this object can have, see the documentation [section](#documentation).
+
 ## Installation
 
 ## documentation

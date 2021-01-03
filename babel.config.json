@@ -2,7 +2,7 @@
   "presets": ["@babel/env"],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-export-default-from",
+    "add-module-exports",
     [
       "@babel/plugin-transform-modules-umd", {
         "exactGlobals" : true,

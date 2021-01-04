@@ -19,8 +19,8 @@ To turn a dialog draggable, you need only type this:
 
 ```js
 new Draggable({
-  "dialogId"                      : "elementId",
-  "elementThatCaptureTheClickId" : "elementId"
+  "dialogId"                   : "elementId",
+  "elementThatCaptureTheClick" : "elementId"
 })
 ```
 

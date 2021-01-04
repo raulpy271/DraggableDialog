@@ -11,7 +11,8 @@ class DraggableWithoutTouchSupport {
     dialogId,
     elementThatCaptureThatClickId,
     showButtonId,
-    hideButtonId
+    hideButtonId,
+    centerElement
   }) {
     this.top = 0
     this.left = 0
@@ -20,7 +21,9 @@ class DraggableWithoutTouchSupport {
       document.getElementById(elementThatCaptureThatClickId)
 
 
-    this.centerDialog()
+    if (centerElement) {
+      this.centerDialog()
+    }
     this.elementThatCaptureThatClick.onmousedown = this.click
     addEventToHideAndShowDialog(hideButtonId, showButtonId, dialogId)
   }

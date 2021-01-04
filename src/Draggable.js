@@ -8,13 +8,15 @@ class Draggable extends DraggableWithoutTouchSupport {
     dialogId,
     elementThatCaptureThatClickId,
     showButtonId,
-    hideButtonId
+    hideButtonId,
+    centerElement = false
   }) {
     super({
       dialogId,
       elementThatCaptureThatClickId,
       showButtonId,
-      hideButtonId
+      hideButtonId,
+      centerElement
     })
 
 

@@ -34,7 +34,36 @@ The library can be used in the browser or in NodeJs environment to be used in Re
 
 ### Installation in browser
 
-### Installation in React
+### Installation in NodeJs (ReactJs or others libraries)
+
+You can use the npm to install this library with this command:
+
+```sh
+$ npm install draggable_dialog --production
+```
+
+I used this library with reactJs, but you can use it with whatever library/framework that you want. It's simple, you only need to install it with npm and execute the `Draggable` class, but you have to pay attention to execute it when the component is rendered. 
+
+See an example in react:
+
+```js
+import {useEffect} from 'react'
+import Draggable from 'draggable_dialog'
+import MyComponent from './MyComponent.js'
+
+
+const MyComponentDraggable = () => {
+  useEffect( () => 
+    new Draggable({
+      "dialogId" : "MyComponentId",
+      "elementThatCaptureThatClickId" : "MyComponentId"
+    })
+  )
+  return <MyComponent/>
+}
+```
+
+I use `useEffect` to execute the library after the component is rendered. Feels free to add examples with other libraries.
 
 ## documentation
 

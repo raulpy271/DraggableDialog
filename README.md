@@ -1,7 +1,7 @@
 
 # Create A Draggable, Resizable, and Custom Dialog
 
-![Terminal in browser](/assets/socialImage.png)
+![Terminal in browser](/assets/example.gif)
 
 This is a library that use Vanilla Javascript to create draggable dialogs. He automates the process of create events that listen to the touches and clicks and moves. 
 

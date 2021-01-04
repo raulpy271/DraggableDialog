@@ -1,6 +1,6 @@
 {
   "name": "draggable_dialog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "A Javascript library that help you to create a draggable, resizable, and custom dialog",
   "keywords": "draggable dialog reatjs browser phones responsive",

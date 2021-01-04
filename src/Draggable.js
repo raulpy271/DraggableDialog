@@ -22,7 +22,7 @@ class Draggable extends DraggableWithoutTouchSupport {
 
     this.lastTouchX = 0
     this.lastTouchY = 0
-    this.elementThatCaptureThatClick.ontouchstart = this.touch
+    this.elementThatCaptureTheClick.ontouchstart = this.touch
   }
 
 

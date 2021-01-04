@@ -67,6 +67,16 @@ I use `useEffect` to execute the library after the component is rendered. Feels 
 
 ## documentation
 
+To use all features you should know all parameters passed to the `Draggable` class. The parameters is passed via an object. This object can have these methods:
+
+Object Key | Importance | Action
+---------- | ---------- | ------
+`dialogId` | required | This is the id of the entire dialog
+`elementThatCaptureThatClickId` | required | This is the id of the element that will listen for drags
+`centerElement` | optional | A boolean value. if it's true then the library will centralize the element, or If it's omitted or is false, the library doesn't will
+`hideButtonId` | optional | The id of the close button. If used, the library will add an event in this button to close the dialog when the button has clicked
+`showButtonId` | optional | The id of the button that shows the dialog. If used, the library will add an event in this button to show the dialog only when clicked
+
 ## TODO 
 
 As always, I have created a to-do list to help me to maintain a clear path to what to do, and help others to know what do to contribute. So, feels free to make this.

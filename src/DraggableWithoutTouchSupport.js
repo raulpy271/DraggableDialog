@@ -9,7 +9,7 @@ class DraggableWithoutTouchSupport {
 
   constructor({ 
     dialogId,
-    elementThatCaptureThatClickId,
+    elementThatCaptureTheClick,
     showButtonId,
     hideButtonId,
     centerElement
@@ -18,7 +18,7 @@ class DraggableWithoutTouchSupport {
     this.left = 0
     this.dialog = document.getElementById(dialogId)
     this.elementThatCaptureThatClick =
-      document.getElementById(elementThatCaptureThatClickId)
+      document.getElementById(elementThatCaptureTheClick)
 
 
     if (centerElement) {

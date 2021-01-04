@@ -6,14 +6,14 @@ class Draggable extends DraggableWithoutTouchSupport {
 
   constructor({ 
     dialogId,
-    elementThatCaptureThatClickId,
+    elementThatCaptureTheClick,
     showButtonId,
     hideButtonId,
     centerElement = false
   }) {
     super({
       dialogId,
-      elementThatCaptureThatClickId,
+      elementThatCaptureTheClick,
       showButtonId,
       hideButtonId,
       centerElement

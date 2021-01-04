@@ -20,7 +20,7 @@ To turn a dialog draggable, you need only type this:
 ```js
 new Draggable({
   "dialogId"                      : "elementId",
-  "elementThatCaptureThatClickId" : "elementId"
+  "elementThatCaptureTheClickId" : "elementId"
 })
 ```
 
@@ -33,6 +33,12 @@ To see more methods that this object can have, see the documentation [section](#
 The library can be used in the browser or in NodeJs environment to be used in React or other libraries.
 
 ### Installation in browser
+
+To use in the browser, you can import this library in a tag script:
+
+```html
+<script src="https://ghcdn.rawgit.org/raulpy271/DraggableDialog/master/dist/Draggable.js"></script>
+```
 
 ### Installation in NodeJs (ReactJs or others libraries)
 
@@ -56,7 +62,7 @@ const MyComponentDraggable = () => {
   useEffect( () => 
     new Draggable({
       "dialogId" : "MyComponentId",
-      "elementThatCaptureThatClickId" : "MyComponentId"
+      "elementThatCaptureTheClick" : "MyComponentId"
     })
   )
   return <MyComponent/>
@@ -72,7 +78,7 @@ To use all features you should know all parameters passed to the `Draggable` cla
 Object Key | Importance | Action
 ---------- | ---------- | ------
 `dialogId` | required | This is the id of the entire dialog
-`elementThatCaptureThatClickId` | required | This is the id of the element that will listen for drags
+`elementThatCaptureTheClick` | required | This is the id of the element that will listen for drags
 `centerElement` | optional | A boolean value. if it's true then the library will centralize the element, or If it's omitted or is false, the library doesn't will
 `hideButtonId` | optional | The id of the close button. If used, the library will add an event in this button to close the dialog when the button has clicked
 `showButtonId` | optional | The id of the button that shows the dialog. If used, the library will add an event in this button to show the dialog only when clicked

@@ -24,7 +24,7 @@ class DraggableWithoutTouchSupport {
     if (centerElement) {
       this.centerDialog()
     }
-    this.elementThatCaptureTheClick.onmousedown = this.click
+    this.elementThatCaptureTheClick.addEventListener("mousedown", this.click)
     addEventToHideAndShowDialog(hideButtonId, showButtonId, dialogId)
   }
 
@@ -50,14 +50,14 @@ class DraggableWithoutTouchSupport {
 
 
   click = mouseEvent => {
-    window.onmousemove = this.updatePositionWhenHoldClick 
-    window.onmouseup = this.endClick
+    window.addEventListener("mousemove", this.updatePositionWhenHoldClick)
+    window.addEventListener("mouseup", this.endClick)
   }
 
 
   endClick = () => {
-    window.onmousemove = null
-    window.onmouseup   = null
+    window.removeEventListener("mousemove", this.updatePositionWhenHoldClick)
+    window.removeEventListener("mouseup", this.endClick)
   }
 }
 

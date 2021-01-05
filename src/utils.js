@@ -47,13 +47,13 @@ const showDialog = dialogId => {
 
 const showDialogWhenButtonIsActive = (buttonId, dialogId) => {
   let element = document.getElementById(buttonId)
-  element.onclick = () => showDialog(dialogId)
+  element.addEventListener("click", () => showDialog(dialogId))
 }
 
 
 const hideDialogWhenButtonIsActive = (buttonId, dialogId) => {
   let element = document.getElementById(buttonId)
-  element.onclick = () => hideDialog(dialogId)
+  element.addEventListener("click", () => hideDialog(dialogId))
 }
 
 

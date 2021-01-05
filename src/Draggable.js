@@ -22,7 +22,7 @@ class Draggable extends DraggableWithoutTouchSupport {
 
     this.lastTouchX = 0
     this.lastTouchY = 0
-    this.elementThatCaptureTheClick.ontouchstart = this.touch
+    this.elementThatCaptureTheClick.addEventListener("touchstart", this.touch)
   }
 
 
@@ -45,15 +45,15 @@ class Draggable extends DraggableWithoutTouchSupport {
 
   touch = touchEvent => {
     let touch = touchEvent.touches[0]
-    window.ontouchmove = this.updatePositionWhenHoldTouch
-    window.ontouchend  = this.endTouch
+    window.addEventListener("touchmove", this.updatePositionWhenHoldTouch)
+    window.addEventListener("touchend", this.endTouch)
     this.updateLastTouch(touch)
   }
 
 
   endTouch = () => {
-    window.ontouchmove = null
-    window.ontouchend  = null
+    window.removeEventListener("touchmove", this.updatePositionWhenHoldTouch)
+    window.removeEventListener("touchend", this.endTouch)
   }
 }
 

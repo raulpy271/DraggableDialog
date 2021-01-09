@@ -8,7 +8,8 @@
   "main": "./lib/Draggable.js",
   "scripts": {
     "start": "node src/Draggable.js",
-    "build": "npx babel src --out-dir lib ; npx webpack"
+    "build": "npx babel src --out-dir lib ; npx webpack",
+    "test": "jest"
   },
   "browserslist": {
     "production": [
@@ -38,6 +39,7 @@
     "@babel/plugin-transform-modules-umd": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "babel-plugin-add-module-exports": "^1.0.0",
+    "jest": "^26.6.3",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"
   }

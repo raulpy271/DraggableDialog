@@ -13,10 +13,11 @@ document.body.innerHTML = `
 
 
 export const eventFire = (el, etype) => {
-  let evObj = document.createEvent('Events');
-  evObj.initEvent(etype, true, false);
-  el.dispatchEvent(evObj);
+  let evObj = new Event(etype)
+  el.dispatchEvent(evObj)
 }
+
+
 
 
 export var dialog       = document.getElementById("dialog")

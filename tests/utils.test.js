@@ -1,3 +1,5 @@
+import {eventFire, dialog, start_button, close_button} from "./setup.js"
+
 import {getPositionTocenterElement,
   addEventToHideAndShowDialog
   } from '../src/utils.js'
@@ -14,24 +16,17 @@ test("Function to center elements", () => {
 
 
 test("Events to show and hide element", () => {
-  let dialogFake = document.getElementById("dialog")
-  let hideButton = document.getElementById("hide")
-  let showButton = document.getElementById("show")
+  expect(dialog.style.display).toBe("")
+  addEventToHideAndShowDialog("close-button", "start-button", "dialog")
+  expect(dialog.style.display).toBe("none")
+
+  
+  eventFire(start_button, "click")
+  expect(dialog.style.display).toBe("")
 
 
-  addEventToHideAndShowDialog("hide", undefined, "dialog")
-
-
-  expect(hideButton.listeners).toContain("click")
-  expect(dialogFake.style.display).toBe("none")
-
-
-  addEventToHideAndShowDialog("hide", "show", "dialog")
-
-
-  expect(hideButton.listeners).toContain("click")
-  expect(showButton.listeners).toContain("click")
-  expect(dialogFake.style.display).toBe("")
+  eventFire(close_button, "click")
+  expect(dialog.style.display).toBe("none")
 })
 
 

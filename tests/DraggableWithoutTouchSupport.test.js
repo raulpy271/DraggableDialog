@@ -1,24 +1,17 @@
+import {eventFire, moveTenPixelUp, dialog, title} from "./setup.js"
+
 import Draggable from '../src/DraggableWithoutTouchSupport.js'
 
 
-var dialog;
-
-
-describe("Passing parameters to Draggable", () => {
-  beforeEach( () => {
-    dialog = new Draggable({
-      "dialogId"                   : "dialog",
-      "elementThatCaptureTheClick" : "bar",
-      "showButtonId"               : "showButton",
-      "hideButtonId"               : "hideButton",
-      "centerElement"              : true
-    })
-  }) 
-
-
-  test("Testing center parameter", () => {
-    console.log(dialog)
+test("Testing parameters", () => {
+  let draggable = new Draggable({
+    "dialogId" : "dialog",
+    "elementThatCaptureTheClick" : "title"
   })
+
+
+  expect(draggable.dialog).toEqual(dialog)
+  expect(draggable.elementThatCaptureTheClick).toEqual(title)
 })
 
 

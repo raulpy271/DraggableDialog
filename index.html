@@ -16,7 +16,7 @@
 
 
     <div id="dialog">
-      <div class="title">
+      <div id="title" class="title">
         <p id="title-text">Loren Ipsum</p>
         <button id="close-button" type="button" class="btn-close" aria-label="Close"/>
       </div>
@@ -30,7 +30,7 @@
     <script>
       new Draggable({
         "dialogId"                   : "dialog",
-        "elementThatCaptureTheClick" : "title-text",
+        "elementThatCaptureTheClick" : "title",
         "centerElement"              : true,
         "hideButtonId"               : "close-button",
         "showButtonId"               : "start-button" 

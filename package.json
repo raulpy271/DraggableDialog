@@ -7,9 +7,9 @@
   "dependencies": {},
   "main": "./lib/Draggable.js",
   "scripts": {
-    "start": "node src/Draggable.js",
-    "build": "npx babel src --out-dir lib ; npx webpack",
-    "test": "jest"
+    "start" : "node lib/Draggable.js",
+    "build" : "npx babel src --out-dir lib ; npx webpack",
+    "test"  : "clear ; jest"
   },
   "browserslist": {
     "production": [

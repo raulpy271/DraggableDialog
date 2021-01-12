@@ -1,0 +1,42 @@
+
+
+body {
+  color            : white;
+  text-align       : center;
+  margin-top       : 10%;
+  background-image : url(./assets/wallpaper.webp)
+}
+
+
+#dialog {
+  position         : fixed;
+  width            : 300px;
+  height           : 200px;
+  background-color : #0d6efd;
+  border-radius    : .25rem;
+  padding          : 5px;
+
+}
+
+
+.title {
+  margin-bottom : 10px;
+}
+
+
+#title-text {
+  display   : inline;
+  font-size : 20px;
+  margin    : 10px;
+  cursor    : pointer;
+}
+
+
+.btn-close {
+	position : absolute;
+	right    : 0%;
+	margin   : 10px;
+	padding  : 0px;
+}
+
+

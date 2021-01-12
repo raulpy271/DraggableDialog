@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Draggable Dialog</title>
+  </head>
+  <body>
+
+
+    <button id="start-button" type="button" class="btn btn-primary">
+      Show dialog
+    </button>
+
+
+    <div id="dialog">
+      <div class="title">
+        <p id="title-text"> Alert Important</p>
+        <button type="button" class="btn-close" aria-label="Close"></button>
+      </div>
+      <div class="dialog-content">
+      </div>
+    </div>
+
+
+    <style>
+body {
+  background-image : url(https://mspoweruser.com/wp-content/uploads/2019/12/waterfalls-wallpaper-4.jpg);
+}
+
+
+#dialog {
+  position: fixed;
+  width : 300px;
+  height : 200px;
+  background-color : white;
+}
+
+
+.title {
+  text-align : center;
+}
+
+
+#title-text {
+  display   : inline;
+  font-size : 20px;
+	margin    : 10px;
+}
+
+
+.btn-close {
+	position : absolute;
+	right    : 0%;
+	margin   : 10px;
+	padding  : 0px;
+}
+
+
+    </style>
+
+
+    <script src="https://ghcdn.rawgit.org/raulpy271/DraggableDialog/master/dist/Draggable.js"></script>
+
+
+    <script>
+    </script>
+  </body>
+</html>
+

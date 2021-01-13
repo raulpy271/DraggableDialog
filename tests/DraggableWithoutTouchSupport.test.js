@@ -15,6 +15,29 @@ test("Testing parameters", () => {
 })
 
 
+test("Center element", () => {
+  window.innerWidth  = 100
+  window.innerHeight = 100
+
+
+  expect(dialog.style.top ).toBe("")
+  expect(dialog.style.left).toBe("")
+
+
+  let draggable = new Draggable({
+    "dialogId" : "dialog",
+    "elementThatCaptureTheClick" : "title",
+    "centerElement" : true
+  })
+
+
+  expect(dialog.clientHeight).toBe(0)
+  expect(dialog.clientWidth).toBe(0)
+  expect(dialog.style.top).toBe("50px")
+  expect(dialog.style.left).toBe("50px")
+})
+
+
 test("Movement dialog", () => {
   let draggable = new Draggable({
     "dialogId" : "dialog",

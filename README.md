@@ -7,6 +7,8 @@ This is a library that use Vanilla Javascript to create draggable dialogs. He au
 
 So, you don't need to worry about create javascript code, to turn draggable your elements, you will only create the html and styles of the dialog, and the lib will turn it draggable to desktop and phones users.
 
+See a [demo](https://raulpy271.github.io/DraggableDialog/) page, and as the [source](index.html) code is simple.
+
 ## Why?
 
 The dialog box in sites are very common, they have different utilities. But, I don't know something that helps developers to automate the process of creating Draggable dialogs. I only found a snippet of codes that are either poorly documented or difficult to custom, or with another mistake. 

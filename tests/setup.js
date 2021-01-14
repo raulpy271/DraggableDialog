@@ -12,6 +12,16 @@ document.body.innerHTML = `
 `
 
 
+const touchEventFactory = (clientX, clientY, touchType) => {
+  let touchEvent = new Event(touchType)
+  touchEvent.touches = [{
+    "clientX" : clientX,
+    "clientY" : clientY
+  }]
+  return touchEvent
+}
+
+
 export const eventFire = (element, type) => {
   let evObj = new Event(type)
   element.dispatchEvent(evObj)
@@ -19,20 +29,36 @@ export const eventFire = (element, type) => {
 
 
 export const moveTenPixelUp = element => {
-  let evObj = new Event("mousedown")
-  element.dispatchEvent(evObj)
-  evObj = new Event("mousemove")
-  evObj.movementX = 0
-  evObj.movementY = -10
-  window.dispatchEvent(evObj)
-  evObj = new Event("mouseup")
-  window.dispatchEvent(evObj)
+  eventFire(element, "mousedown")
+
+
+  let mouseMove = new Event("mousemove")
+  mouseMove.movementX = 0
+  mouseMove.movementY = -10
+  window.dispatchEvent(mouseMove)
+
+
+  eventFire(window, "mouseup")
 }
 
 
-export var dialog       = document.getElementById("dialog")
-export var title        = document.getElementById("title")
-export var close_button = document.getElementById("close-button")
-export var start_button = document.getElementById("start-button")
+export const moveTenPixelUpWithTouch = element => {
+  let touchStart = touchEventFactory(0, 0, "touchstart")
+  element.dispatchEvent(touchStart)
+
+
+  let touchMove = touchEventFactory(0, -10, "touchmove")
+  window.dispatchEvent(touchMove)
+
+
+  let touchEnd = touchEventFactory(0, 0, "touchend")
+  window.dispatchEvent(touchEnd)
+}
+
+
+export const dialog       = document.getElementById("dialog")
+export const title        = document.getElementById("title")
+export const close_button = document.getElementById("close-button")
+export const start_button = document.getElementById("start-button")
 
 

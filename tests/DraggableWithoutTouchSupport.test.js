@@ -1,4 +1,4 @@
-import {eventFire, moveTenPixelUp, dialog, title} from "./setup.js"
+import {moveTenPixelUp, dialog, title} from "./setup.js"
 
 import Draggable from '../src/DraggableWithoutTouchSupport.js'
 

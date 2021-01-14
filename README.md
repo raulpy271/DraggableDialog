@@ -85,10 +85,3 @@ Object Key | Importance | Action
 `hideButtonId` | optional | The id of the close button. If used, the library will add an event in this button to close the dialog when the button has clicked
 `showButtonId` | optional | The id of the button that shows the dialog. If used, the library will add an event in this button to show the dialog only when clicked
 
-## TODO 
-
-As always, I have created a to-do list to help me to maintain a clear path to what to do, and help others to know what do to contribute. So, feels free to make this.
-
- - Create Examples
- - Add tests
-

@@ -14,11 +14,13 @@ class DraggableWithoutTouchSupport {
     hideButtonId,
     centerElement
   }) {
-    this.top = 0
-    this.left = 0
     this.dialog = document.getElementById(dialogId)
     this.elementThatCaptureTheClick =
       document.getElementById(elementThatCaptureTheClick)
+
+
+    this.top  = this.dialog.offsetTop
+    this.left = this.dialog.offsetLeft
 
 
     if (centerElement) {

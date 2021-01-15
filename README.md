@@ -39,7 +39,7 @@ The library can be used in the browser or in NodeJs environment to be used in Re
 To use in the browser, you can import this library in a tag script:
 
 ```html
-<script src="https://ghcdn.rawgit.org/raulpy271/DraggableDialog/master/dist/Draggable.js"></script>
+<script src="https://ghcdn.rawgit.org/raulpy271/DraggableDialog/1.0.2/dist/Draggable.js"></script>
 ```
 
 ### Installation in NodeJs (ReactJs or others libraries)

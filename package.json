@@ -1,6 +1,6 @@
 {
   "name": "draggable_dialog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "A Javascript library that turn draggable elements and can be used in react, vue and angular",
   "keywords": "draggable dialog reatjs browser phones responsive element vue angular",
